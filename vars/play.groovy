@@ -39,7 +39,7 @@ def call(Map config){
         def start = System.currentTimeMillis()
         
         for(playbook in playbooks){
-            def command = """ansible-playbook -i ${inventory} ${playbook} ${options} --vault-password-file /usr/share/jenkins/ref/vault.key"""
+            def command = """ansible-playbook -i ${inventory} ${playbook} ${options}"""
             
             if(!simulate){
                        wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
